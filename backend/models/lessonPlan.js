@@ -1,0 +1,36 @@
+const mongoose = require("mongoose");
+
+const lessonplanSchema = new mongoose.Schema({
+  title: { type: String, required: true },
+  school: { type: mongoose.Types.ObjectId, ref: "School", required: true },
+  teacher: { type: mongoose.Types.ObjectId, ref: "Staff", required: true },
+  term: { type: Number, required: true },
+  date: { type: Date, default: Date.now },
+  subject: { type: String, required: true },
+  classes: { type: String, required: true },
+  unit: { type: String, required: true },
+  lesson: { type: String, required: true },
+  skills: { type: Array, required: true },
+  knowledge: { type: Array, required: true },
+  values: { type: Array, required: true },
+  plan: { type: String, required: true },
+  materials: { type: String, required: true },
+  referencies: { type: String, required: true },
+  description: { type: String, required: true },
+  teacheract: { type: String, required: true },
+  learerActs: { type: String, required: true },
+  genericCompetence: { type: String, required: true },
+  introMin: { type: Number, required: true },
+  devMin: { type: Number, required: true },
+  concMin: { type: Number, required: true },
+  evaluation: { type: String, required: true },
+  note: { type: Array, required: true },
+  numberNeeds: { type: Number, required: true },
+  duration: { type: String, required: true },
+  needs: { type: String, required: true },
+  unitTitle: { type: String, required: true },
+  unitCompetence: { type: String, required: true },
+  lessonTitle: { type: String, required: true },
+});
+
+module.exports = mongoose.model("Lesson", lessonplanSchema);
